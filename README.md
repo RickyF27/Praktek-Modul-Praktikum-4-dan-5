@@ -90,3 +90,95 @@ Dalam kode Eight Puzzle yang telah diberikan, langkah-langkah untuk mencapai kea
      f. Jika node penerus belum pernah ada di daftar open atau memiliki biaya lebih rendah, tambahkan node penerus ke daftar open dengan biaya yang telah diperbarui.
   
 Tahapan ini akan terus diulang sampai solusi ditemukan atau semua kemungkinan solusi dieksplorasi. Hasil akhir dari pencarian akan mencetak langkah-langkah solusi ke dalam output. Penting untuk dicatat bahwa class EightPuzzleSearch, EightPuzzleSpace, dan Node bekerja sama untuk mencari dan mengeksekusi solusi Eight Puzzle. Class EightPuzzleSearch mengatur logika pencarian, EightPuzzleSpace memberikan informasi tentang keadaan awal dan keadaan tujuan, serta menghasilkan node-node awal, sementara class Node digunakan untuk merepresentasikan setiap keadaan dalam permainan Eight Puzzle dan menyimpan informasi penting tentang keadaan tersebut, biayanya, dan node induknya.
+
+Pada percobaan kedua, diperlukan 13 langkah untuk mencapai keadaan tujuan yang diinginkan, sedangkan pada percobaan pertama hanya memerlukan 6 langkah. Perbedaan ini disebabkan oleh perbedaan jarak yang lebih jauh dari keadaan awal ke keadaan tujuan pada puzzle di percobaan kedua, dibandingkan dengan percobaan pertama, atau karena kekacauan posisi yang lebih rumit pada percobaan kedua daripada percobaan pertama. Oleh karena itu, untuk mencapai keadaan tujuan yang diinginkan pada percobaan kedua, memerlukan langkah yang lebih banyak.
+
+3. Ubahlah initial dan goal state dari program di atas sehingga bentuk initial dan goal statenya Gambar 5.9. Kemudian tentukan langkah-langkah mana saja sehingga puzzlenya mencapai goal state. Analisa dan bedakan dengan solusi pada point 1 dan 2.
+
+jawaban :
+
+Ubah initial dan goal pada program seperti berikut
+
+![image](https://github.com/RickyF27/Praktek-Modul-Praktikum-4-dan-5/assets/149030301/ba63605c-d780-4dbd-9a8b-cedc84debc38)
+
+langkah-langkah untuk mencapai goal state adalah.
+
+- Kondisi Awal (Root): {1, 5, 3, 4, 6, 8, 2, 7, 0}.
+
+- Kondisi Goal: {7, 6, 5, 8, 0, 4, 1, 2, 3}.
+
+- Jalannya Algoritma:
+
+  a. Algoritma A* dimulai dengan kondisi awal (Root).
+
+  b. Algoritma memeriksa semua kemungkinan langkah dari kondisi awal, mempertimbangkan posisi kotak kosong, dan menggunakan salah satu heuristik untuk menghitung biaya.
+
+  c. Algoritma mencari jalur paling efisien menuju keadaan tujuan dengan mempertimbangkan biaya total.
+
+  d. Algoritma memilih berdasarkan prioritas biaya terendah, yang ditentukan oleh heuristik yang digunakan.
+
+  e. Algoritma terus berjalan hingga mencapai keadaan tujuan.
+
+Pada percobaan ketiga, diperlukan 20 langkah untuk mencapai keadaan tujuan yang diinginkan, sementara pada percobaan pertama hanya memerlukan 6 langkah, dan pada percobaan kedua memerlukan 13 langkah untuk mencapai keadaan tujuan yang diinginkan. Perbedaan ini disebabkan oleh fakta bahwa teka-teki pada percobaan ketiga memiliki jarak yang lebih jauh dari keadaan awal hingga keadaan tujuan dibandingkan dengan percobaan pertama dan kedua.
+
+4. Ubahlah initial dan goal state dari program di atas sehingga bentuk initial dan goal statenya Gambar 5.10. Kemudian tentukan langkah-langkah mana saja sehingga puzzlenya mencapai goal state. Analisa dan bedakan dengan solusi pada point 1, 2, dan 3.
+
+jawaban :
+
+Ubah initial dan goal pada program seperti berikut
+
+![image](https://github.com/RickyF27/Praktek-Modul-Praktikum-4-dan-5/assets/149030301/2a261c14-750e-47e9-8026-17900363f822)
+
+Langkah-langkah untuk mencapai goal state adalah.
+
+- Kondisi Awal (Root): {1, 2, 3, 4, 5, 6, 7, 8, 0}
+
+- Kondisi Goal: {1, 2, 3, 4, 0, 5, 6, 7, 8}
+
+- Alur Algoritma:
+
+  a. Algoritma A* dimulai dengan kondisi awal (Root).
+
+  b. Algoritma mencari langkah-langkah untuk mencapai keadaan akhir (Goal).
+
+  c. Algoritma menggunakan salah satu heuristik untuk menghitung biaya setiap langkah.
+
+  d. Algoritma memilih langkah-langkah yang memiliki biaya terendah berdasarkan heuristik yang dipilih.
+
+  e. Algoritma terus berjalan hingga mencapai keadaan akhir (Goal).
+
+Dalam percobaan ini, diketahui bahwa pada awalnya, root dari keempat percobaan menunjukkan perbedaan yang signifikan. Root di percobaan ketiga memiliki urutan angka yang lebih kompleks dibanding dengan root pada percobaan lainnya. Selain itu, solusi dari setiap percobaan juga menunjukkan perbedaan. Dalam percobaan pertama, solusinya adalah 1 6 5 8 0 4 2 7 3, sementara dalam percobaan kedua, solusinya adalah 1 2 3 4 5 6 7 8 0. Di sisi lain, dalam percobaan ketiga, solusinya adalah 7 6 5 8 0 4 1 2 3. Secara keseluruhan, walaupun keempat percobaan berhasil mencapai solusi, namun perbedaan pada root dan solusi menandakan bahwa program dimulai dari kondisi awal yang berbeda dan mencapai tujuan yang berbeda.
+
+5. Ubahlah initial dan goal state dari program dan class-class di atas sehingga bentuk initial dan goal statenya Gambar 5.11. Kemudian tentukan langkah-langkah mana saja sehingga puzzlenya mencapai goal state.
+
+jawaban :
+
+Ubah initial dan goal pada program seperti berikut
+
+![image](https://github.com/RickyF27/Praktek-Modul-Praktikum-4-dan-5/assets/149030301/800a26b3-f18e-4c60-a478-6846778de4df)
+
+langkah-langkah untuk mencapai goal state adalah.
+
+- Mulailah dengan menginisialisasi node awal menggunakan keadaan awal dari puzzle.
+
+- Persiapkan dua daftar: open list dan closed list. Letakkan node awal di dalam open list.
+  
+- Lakukan langkah-langkah berikut selama open list masih memiliki elemen di dalamnya:
+  
+  a. Pilih node dengan biaya terendah dari open list.
+  
+  b. Jika node yang dipilih adalah keadaan akhir (goal state), maka itu berarti puzzle telah selesai dan proses pencarian berakhir.
+  
+  c. Hasilkan semua node turunan dari node saat ini.
+  
+  d. Untuk setiap node turunan, hitung biaya f dan panjang jalur dari node awal hingga node saat ini.
+  
+  e. Jika node turunan sudah ada dalam open list dan biaya f yang baru lebih rendah, perbarui biaya node tersebut.
+  
+  f. Jika node turunan sudah ada dalam closed list dan biaya f yang baru lebih rendah, perbarui biaya node tersebut, dan pindahkan node dari closed list ke dalam open list.
+  
+  g. Jika node turunan belum ada dalam kedua daftar, tambahkan node tersebut ke dalam open list.
+  
+  h. Tandai node saat ini sebagai telah dieksplorasi dengan memindahkannya dari open list ke dalam closed list.
+
+Algoritma mencoba berbagai kombinasi perpindahan ubin untuk menemukan jalur yang paling efisien menuju goal state. Pada percobaan ini untuk mencapai nilai goal state diperluhkan langkah yang sangat panjang, dikarenakan posisi pada root state dan goal state sangat jauh, hal ini juga disebabkan karena posisi node yang sangat teracak.
