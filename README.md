@@ -49,3 +49,44 @@ Untuk menemukan node 3 (C) algoritma BFS pertama-tama dimulai dengan memasukkan 
 
 Jawaban :
 
+- EightPuzzleSearch
+
+Pada class ini menggunakan EightPuzzleSpace supaya mendapatkan informasi tentang ruang pencarian dan kelas Node untuk mewakili simpul dalam pencarian. Class ini juga mengelola daftar terbuka, daftar tertutup serta menyediakan metode untuk mendapatkan simpul terbaik dari daftar terbuka (getBestNode), mendapatkan biaya sebelumnya dari simpul (getPreviousCost), mencetak jalur solusi (printPath), dan menjalankan algoritma pencarian (run).
+
+- EightPuzzleSpace
+
+Class ini bertugas untuk menghasilkan konfigurasi awal dan tujuan dari puzzle 8 angka, serta menghasilkan daftar kemungkinan langkah yang dapat diambil dari suatu keadaan puzzle dengan cara menyediakan metode untuk mendapatkan simpul awal (getRoot), mendapatkan tujuan (getGoal), dan mendapatkan daftar suksesor dari simpul tertentu (getSuccessors).
+
+- Node
+
+Class ini merepresentasikan simpul (node) dalam struktur data graf. Setiap simpul memiliki atribut state yang merupakan array integer berukuran 9, yang merepresentasikan keadaan dari puzzle 8 angka. Atribut lainnya termasuk biaya (cost) yang terkait dengan simpul tersebut, induk (parent) yang merupakan simpul yang merupakan pendahulu dari simpul saat ini, dan daftar suksesor (successors) yang merupakan daftar simpul anak dari simpul saat ini. Kelas ini juga memiliki metode untuk mengonversi ke string, memeriksa kesetaraan, dan mendapatkan jalur dari simpul ke akar.
+
+2. Ubahlah initial dan goal state dari program di atas sehingga bentuk initial dan goal statenya Gambar 8. Kemudian tentukan langkah- langkah mana saja sehingga puzzlenya mencapai goal state. Analisa dan bedakan dengan solusi pada point 1.
+
+Jawaban :
+
+Ubah initial dan goal pada program seperti berikut
+
+![image](https://github.com/RickyF27/Praktek-Modul-Praktikum-4-dan-5/assets/149030301/df2460a2-2627-4264-ac0f-c531dbcd2eeb)
+
+Dalam kode Eight Puzzle yang telah diberikan, langkah-langkah untuk mencapai keadaan tujuan dari keadaan awal dapat ditemukan dalam class EightPuzzleSearch. Class ini bertanggung jawab untuk mencari solusi dengan menggunakan algoritma pencarian A* dan memungkinkan pengguna untuk memilih heuristic yang akan digunakan baik itu h1 atau h2. Proses pencarian solusi melibatkan beberapa tahap berikut:
+
+- Inisialisasikan keadaan awal dan keadaan tujuan.
+
+- Buat node awal (root) menggunakan keadaan awal.
+
+- Masukkan node awal ke dalam daftar open, ketika daftar open belum kosong lakukan langkah-langkah berikut:
+  
+     a. Pilih node dengan biaya terendah..
+
+     b. Tambahkan node terpilih ke dalam daftar closed untuk menghindari pengulangan.
+
+     c. Ketika node terpilih sama dengan keadaan tujuan, maka solusi telah ditemukan, dan proses berakhir.
+
+     d. Dapatkan semua node penerus dari node terpilih.
+
+     e. Untuk setiap node penerus, hitung biaya baru berdasarkan heuristic, panjang path, dan biaya sebelumnya.
+
+     f. Jika node penerus belum pernah ada di daftar open atau memiliki biaya lebih rendah, tambahkan node penerus ke daftar open dengan biaya yang telah diperbarui.
+  
+Tahapan ini akan terus diulang sampai solusi ditemukan atau semua kemungkinan solusi dieksplorasi. Hasil akhir dari pencarian akan mencetak langkah-langkah solusi ke dalam output. Penting untuk dicatat bahwa class EightPuzzleSearch, EightPuzzleSpace, dan Node bekerja sama untuk mencari dan mengeksekusi solusi Eight Puzzle. Class EightPuzzleSearch mengatur logika pencarian, EightPuzzleSpace memberikan informasi tentang keadaan awal dan keadaan tujuan, serta menghasilkan node-node awal, sementara class Node digunakan untuk merepresentasikan setiap keadaan dalam permainan Eight Puzzle dan menyimpan informasi penting tentang keadaan tersebut, biayanya, dan node induknya.
